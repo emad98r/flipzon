@@ -1,0 +1,141 @@
+.payment-page {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #455C7C;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 70%;
+    height: 90vh;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    padding: 0 4em;
+
+    @include breakPoints(mobile) {
+      width: 98%;
+      height: 100%;
+      padding: 1em;
+    }
+
+    .topper {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3, 33%);
+      place-items: center;
+      padding-top: 2em;
+
+      @include breakPoints(mobile) {
+        grid-template-columns: repeat(2, 50%);
+      }
+
+      img {
+        &:first-of-type {
+          width: 10em;
+          place-self: self-start;
+          align-self: center;
+
+          @include breakPoints(mobile) {
+            display: none;
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 2em;
+          place-self: end;
+          align-self: center;
+          cursor: pointer;
+        }
+      }
+
+      h1 {
+        text-transform: capitalize;
+        color: var(--main-color);
+
+        @include breakPoints(mobile) {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    .how-to-pay {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      @include breakPoints(mobile) {
+        flex-direction: column-reverse;
+      }
+
+      .card-info {
+        form {
+          width: 100%;
+
+          div {
+            margin-bottom: 1em;
+          }
+
+          .expiry-cont {
+            display: flex;
+            flex-direction: column;
+
+            div {
+              display: flex;
+
+              input {
+                &:first-of-type {
+                  margin-right: 0.5em;
+                }
+              }
+            }
+          }
+
+          label {
+            text-transform: capitalize;
+            font-size: 1.2em;
+            font-weight: 500;
+          }
+
+          p {
+            color: gray;
+            font-size: 0.8em;
+          }
+
+          input {
+            width: 100%;
+            padding: 0.5em;
+            background-color: #F7F9FC;
+            border: 1px solid #80808060;
+            border-radius: 10px;
+            font-size: 1.1em;
+          }
+
+          #paymentBtn {
+            background-color: var(--main-color);
+            color: var(--white-color);
+            cursor: pointer;
+
+            &:hover {
+              background-color: var(--white-color);
+              color: var(--main-color);
+              border: 1px solid var(--main-color);
+            }
+          }
+        }
+      }
+
+      img {
+        @include breakPoints(mobile) {
+          width: 50%;
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}

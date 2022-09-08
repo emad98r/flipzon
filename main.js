@@ -145,15 +145,15 @@ function hideAlert() {
 
 
 // cart window --------------------
-let cart_win = document.querySelector(".cart-win"),
+let cart_page = document.querySelector(".cart-page"),
   cart_cles_butn = document.querySelector(".cart-cles-butn"),
   openCart = document.querySelector("#openCart");
 
 openCart.addEventListener("click", () => {
-  cart_win.style.display = 'grid'
+  cart_page.style.display = 'flex'
 })
 cart_cles_butn.addEventListener("click", () => {
-  cart_win.style.display = 'none'
+  cart_page.style.display = 'none'
 })
 
 
@@ -387,4 +387,22 @@ p_23_c.addEventListener("click", () => {
 })
 document.querySelector(".product-added:nth-of-type(23) .pord-cancel").addEventListener("click", () => {
   document.querySelector(".product-added:nth-of-type(23)").style.display = 'none'
+})
+
+
+// payment page -----------------
+let paymentPage = document.querySelector(".payment-page"),
+  cancelBtnPayment = document.querySelector("#cancelBtnPayment"),
+  paymentBtn = document.querySelector("#paymentBtn"),
+  openPaymentBtn = document.querySelector("#openPaymentBtn");
+
+cancelBtnPayment.addEventListener("click", () => {
+  paymentPage.style.display = 'none'
+})
+
+openPaymentBtn.addEventListener("click", () => {
+  paymentPage.style.display = 'flex'
+})
+paymentBtn.addEventListener("click", () => {
+  alert("Done")
 })
